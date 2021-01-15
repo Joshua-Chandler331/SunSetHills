@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/SunSetHills/css/prism.css">
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: black">
+        <a class="navbar-brand" href="#">Sun Set Hills</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/SunSetHills/Code.html">index</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/SunSetHills/Code.html">Code<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/SunSetHills/Solve.html">Solve</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank">GitHub</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <pre class="language-javascript">
+        <code class="line-numbers">
+            document.getElementById("btnSH").addEventListener("click", SunsetHills);
+            document.getElementById("btnClear").addEventListener("click", Clear);
+            
+            
+            function SunsetHills(){
+            
+                let num1 = parseInt(document.getElementById("shInput1").value);
+                let num2 = parseInt(document.getElementById("shInput2").value);
+                let num3 = parseInt(document.getElementById("shInput3").value);
+                let num4 = parseInt(document.getElementById("shInput4").value);
+                let num5 = parseInt(document.getElementById("shInput5").value);
+            
+                let userArray = new Array();
+                userArray.push(num1);
+                userArray.push(num2);
+                userArray.push(num3);
+                userArray.push(num4);
+                userArray.push(num5);
+            
+                let maxNum = userArray[0];
+                let acendingArray = new Array();
+                acendingArray.push(maxNum);
+            
+                for (let loop=1; loop < userArray.length; loop++){
+                    if( userArray[loop] > maxNum ){
+            
+                        maxNum = userArray[loop];
+                        acendingArray.push(maxNum);
+            
+                    }
+                }
+                
+                document.getElementById("output").innerText = `The Ascending array is [${acendingArray.join(`, `)}]`;
+            }
+            
+            function Clear(){
+                document.getElementById("shInput1").value = "";
+                document.getElementById("shInput2").value = "";
+                document.getElementById("shInput3").value = "";
+                document.getElementById("shInput4").value = "";
+                document.getElementById("shInput5").value = "";
+                document.getElementById("output").innerText = "";
+            }
+        </code>
+    </pre>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/SunSetHills/js/prism.js"></script>
+
+    </body>
+</html>
